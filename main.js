@@ -9,9 +9,13 @@ const PALABRASELECCIONADA = PALABRA[Math.floor(Math.random() * PALABRA.length)]
 let palabraOculta = new Array(PALABRASELECCIONADA.length).fill('_')
 let intentos = 5
 let letrasIncorrectas = []
-let inputValido = /^[a-zA-Z]$/
+let inputValido = /^[a-zA-Z]$/ // Variable para asegurar que el jugador introduzca solo una letra de la 'a' a la 'z'
 
 // Inicia el juego
+let nombre = prompt('Bienvenido al juego. Por favor, intruzca su nombre')
+
+console.log('Hola ' + nombre + ', buena suerte.')
+
 while (intentos && (palabraOculta.join('') !== PALABRASELECCIONADA)) {
     jugar(prompt('Elige una letra').toLowerCase())
 }
